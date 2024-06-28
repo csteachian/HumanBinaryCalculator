@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two Player Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="number-container">
+      <div class="score" id="red-team">
+        <h1 id="red-number">000</h1>
+        <h3 id="red-solution"></h3>
+      </div>
+      <div id="number-center">
+        <div id="timer-container">
+          <div class="static-bar" id="bar"></div>
+          <div class="timer-text" id="timer">10</div>
+        </div>
+        <div id="solve-button">
+          <button id="solve-button" onclick="showAnswers()">SOLVE</button>
+        </div>
+      </div>
+      <div class="score" id="blue-team">
+        <h1 id="blue-number">000</h1>
+        <h3 id="blue-solution"></h3>
+      </div>
+    </div>
+    <br />
+    <p>
+      Get your players into position. When the GO button is clicked you have 10
+      seconds to form the human binary sequence for the number shown.
+    </p>
+    <div id="container">
+      <div id="red-team" class="team">
+        <h2>Red Team</h2>
+        <input
+          type="range"
+          id="red-select"
+          min="2"
+          max="8"
+          value="2"
+          oninput="updateRedLabel()"
+        />
+        <label id="red-label" for="red-select">2</label>
+        <div>Number of players</div>
+
+        <div id="red-result" class="result"></div>
+      </div>
+      <div id="center">
+        <button id="go-button" onclick="startGame()">GO</button>
+      </div>
+      <div id="blue-team" class="team">
+        <h2>Blue Team</h2>
+        <input
+          type="range"
+          id="blue-select"
+          min="2"
+          max="8"
+          value="2"
+          oninput="updateBlueLabel()"
+        />
+        <label id="blue-label" for="blue-select">2</label>
+        <div>Number of players</div>
+
+        <div id="blue-result" class="result"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
